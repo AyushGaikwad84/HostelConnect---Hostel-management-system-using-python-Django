@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f9f5f0;
+    }
+    .room-card {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .room-card img {
+        height: 450px;
+        object-fit: cover;
+        border-bottom: 1px solid #eee;
+    }
+    .facility-list {
+        font-size: 15px;
+    }
+    .facility-list li {
+        margin-bottom: 8px;
+    }
+    .rent-section {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        margin-top: 50px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 768px) {
+    .room-card img {
+        height: 180px;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .facility-list {
+        font-size: 14px;
+        padding-left: 15px;
+    }
+
+    .facility-list li {
+        margin-bottom: 6px;
+    }
+
+    .rent-section {
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .rent-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .rent-section p {
+        font-size: 14px;
+    }
+
+    .display-5 {
+        font-size: 1.8rem;
+    }
+
+    .lead {
+        font-size: 15px;
+    }
+
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+</style>
+
+<!-- Header Section -->
+<div class="text-center py-5">
+    <h1 class="display-5">Room & Facilities</h1>
+    <p class="lead text-muted">Comfortable, clean, and equipped — designed for student convenience and peace of mind.</p>
+</div>
+
+<!-- Room Card -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card room-card shadow-sm">
+                <img src="/static/images/room_sample.jpg" class="card-img-top" alt="Room Image">
+                <div class="card-body">
+                    <h4 class="card-title text-center mb-3">Single Occupancy Room</h4>
+                    <p class="text-muted text-center">Spacious and well-ventilated rooms with all necessary amenities for a productive student life.</p>
+                    <hr>
+                    <h5 class="text-center mb-3 text-primary">Facilities Provided</h5>
+                    <ul class="list-unstyled facility-list">
+                        <li><i class="fas fa-wifi text-primary me-2"></i> High-speed Wi-Fi</li>
+                        <li><i class="fas fa-bed text-primary me-2"></i> Comfortable Bed & Mattress</li>
+                        <li><i class="fas fa-fan text-primary me-2"></i> Ceiling Fan & Lights</li>
+                        <li><i class="fas fa-plug text-primary me-2"></i> Charging Points & Study Desk</li>
+                        <li><i class="fas fa-utensils text-primary me-2"></i> Veg Meals Daily (Lunch & Dinner)</li>
+                        <li><i class="fas fa-drumstick-bite text-primary me-2"></i> Non-Veg Meals Twice a Week</li>
+                        <li><i class="fas fa-soap text-primary me-2"></i> Washing Machine Access</li>
+                        <li><i class="fas fa-bolt text-primary me-2"></i> Inverter Backup for Light & Fan</li>
+                        <li><i class="fas fa-shield-alt text-primary me-2"></i> Secure Premises with Warden</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Rent Section -->
+<div class="container mt-5">
+    <div class="rent-section text-center">
+        <h3 class="text-success">Affordable Monthly Rent</h3>
+        <p class="lead">Only ₹3000/month with all services included — no hidden charges.</p>
+        <p class="text-muted">Includes Wi-Fi, food, laundry, maintenance, and power backup.</p>
+    </div>
+</div>
+
+{% endblock %}

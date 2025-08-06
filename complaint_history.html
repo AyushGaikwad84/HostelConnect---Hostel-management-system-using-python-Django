@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Complaint History</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {
+    background-color: #f9f5f0;
+    }
+        .history-container {
+            margin-top: 50px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+        .complaint-card {
+            border-left: 5px solid #0d6efd;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #fdfdfd;
+            border-radius: 8px;
+        }
+        .complaint-subject {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .response {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9f7ef;
+            border-left: 3px solid green;
+            border-radius: 5px;
+        }
+        .no-complaint {
+            text-align: center;
+            color: gray;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container history-container">
+    <h3 class="text-center text-primary mb-4">Complaint History</h3>
+
+    {% if complaints %}
+        {% for c in complaints %}
+        <div class="complaint-card">
+            <div class="complaint-subject">{{ c.subject }}</div>
+            <div><strong>Date:</strong> {{ c.date }}</div>
+            <div><strong>Message:</strong> {{ c.msg }}</div>
+
+            {% if c.response %}
+            <div class="response">
+                <strong>Admin Response:</strong><br>
+                {{ c.response }}
+            </div>
+            {% else %}
+            <div class="text-muted mt-2"><em>No response from admin yet.</em></div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="no-complaint">No complaints found.</p>
+    {% endif %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
