@@ -5,6 +5,8 @@ The system is designed to manage student accommodation effectively, providing a 
 
 💡 The UI design and Bootstrap styling were implemented with the help of ChatGPT, which also provided assistance throughout the development process for code optimization, debugging, and mobile responsiveness.
 
+**Note: ** This repository contains only the HTML template files used for the frontend design of the Hostel Management System. Backend files such as Python views, models, and Django configurations are not included in this public repository for code privacy and security reasons.
+
 **🎯 Objective**
 
 The goal of this project is to simplify hostel operations such as room inquiry, student registration, rent management, and complaints, by digitizing them into a centralized platform that is mobile-friendly and easy to use.
