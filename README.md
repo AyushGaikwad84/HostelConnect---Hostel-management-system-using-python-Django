@@ -7,7 +7,6 @@ _**Video Recording is provided in above files.**_
 
 💡 The UI design and Bootstrap styling were implemented with the help of ChatGPT, which also provided assistance throughout the development process for code optimization, debugging, and mobile responsiveness.
 
-**Note: ** This repository contains only the HTML template files used for the frontend design of the Hostel Management System. Backend files such as Python views, models, and Django configurations are not included in this public repository for code privacy and security reasons.
 
 **🎯 Objective**
 
