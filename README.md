@@ -5,7 +5,7 @@ The system is designed to manage student accommodation effectively, providing a 
 
 _**Video Recording is provided in above files.**_
 
-💡 The UI design and Bootstrap styling were implemented with the help of ChatGPT, which also provided assistance throughout the development process for code optimization, debugging, and mobile responsiveness.
+💡 The UI design and Bootstrap styling were implemented with the help of **ChatGPT**, which also assisted with code optimization, debugging, and mobile responsiveness.
 
 
 **🎯 Objective**
@@ -92,6 +92,8 @@ The goal of this project is to simplify hostel operations such as room inquiry, 
 
   - Models for Students, Complaints, Rent, and Contacts
 
+  -  **CSV Export feature** in the admin panel for downloading student data
+
   - Admin panel for complete control
 
 
@@ -153,6 +155,30 @@ Add ability to search/filter students by name, room, status, etc.
 ✅ Data Backup/Export
 Feature for admins to download all data in Excel or CSV format.
 
+
+## 📂 How to Run This Project
+
+How to Run:
+Clone or download the project folder.
+
+Open terminal / command prompt in the project root directory.
+
+Create and activate a virtual environment:
+
+python -m venv venv
+venv\Scripts\activate (Windows)
+source venv/bin/activate (Mac/Linux)
+Install Django:
+
+pip install django
+Run migrations:
+
+python manage.py makemigrations
+python manage.py migrate
+Run the server:
+
+python manage.py runserver
+Open in browser: http://127.0.0.1:8000/
 
 
 **Developer Info:**
