@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+body {
+    background-color: #f9f5f0;
+}
+
+.services-section {
+    padding: 60px 0;
+}
+
+.service-card {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+.intro-text, .closing-text {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #333;
+}
+</style>
+
+<div class="container services-section">
+    <h2 class="text-center mb-4">Our Hostel Services</h2>
+
+    <p class="intro-text">
+        At HostelConnect, we understand what students truly need — comfort, security, and convenience.
+        Whether you're focused on your studies, connecting with friends, or just relaxing, we’ve got everything in place.
+    </p>
+
+    <div class="row text-center g-4">
+        <div class="col-md-4">
+            <div class="card service-card p-4">
+                <div class="service-icon"><i class="fas fa-wifi"></i></div>
+                <h5>High-Speed Wi-Fi</h5>
+                <p class="text-muted">24x7 unlimited internet access in rooms and common areas.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card service-card p-4">
+                <div class="service-icon"><i class="fas fa-bed"></i></div>
+                <h5>Comfortable Rooms</h5>
+                <p class="text-muted">Clean, ventilated rooms with beds, fans, and study tables.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card service-card p-4">
+                <div class="service-icon"><i class="fas fa-utensils"></i></div>
+                <h5>Healthy Meals</h5>
+                <p class="text-muted">Nutritious food daily, including non-veg meals twice a week.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card service-card p-4">
+                <div class="service-icon"><i class="fas fa-shower"></i></div>
+                <h5>24x7 Water Supply</h5>
+                <p class="text-muted">Round-the-clock clean water and washroom access.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card service-card p-4">
+                <div class="service-icon"><i class="fas fa-tshirt"></i></div>
+                <h5>Laundry Access</h5>
+                <p class="text-muted">Free washing machine access available to all students.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card service-card p-4">
+                <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                <h5>Inverter Backup</h5>
+                <p class="text-muted">No interruptions with inverter support during power cuts.</p>
+            </div>
+        </div>
+    </div>
+
+    <p class="closing-text mt-5">
+        💡 Still curious? <br>
+        Feel free to explore more or <a href="{% url 'contact' %}">contact us</a> and become a part of our vibrant hostel community!
+    </p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+/* Base mobile-friendly styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9f5f0;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    .bodycontent{
+         max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px;
+    background-color: #f9f5f0;   
+    }
+  #hostelCarousel .carousel-item img {
+    height: 250px;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1.1rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.95rem;
+  }
+
+  h2, h3 {
+    font-size: 1.4rem;
+  }
+
+  p, .lead {
+    font-size: 1rem;
+    padding: 0 5px;
+  }
+
+  .card-img-top {
+    height: 200px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .feature-icon {
+    font-size: 1.5rem;
+  }
+}
+
+/*  room and facilites page */
+

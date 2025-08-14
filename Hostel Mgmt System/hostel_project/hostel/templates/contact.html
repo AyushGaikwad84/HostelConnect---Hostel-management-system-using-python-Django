@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+body {
+    background-color: #f9f5f0;
+}
+h2{
+    text-align: center;
+    margin-bottom: 10px;
+    color: #0d6efd;
+}
+
+form {
+    max-width: 500px;
+    margin: 60px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #084dc3;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .formbody {
+    padding: 0 15px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .formbody h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .formbody form {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .formbody input,
+  .formbody textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .formbody button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .formbody .ratio iframe {
+    width: 100% !important;
+    height: 200px !important;
+  }
+
+  .formbody .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+    /* form {
+        margin: 30px 15px;
+        padding: 50px;
+        max-width: 100%;
+    }
+
+    form input,
+    form textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    form button {
+        font-size: 15px;
+        padding: 10px;
+    } */
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .ratio iframe {
+        width: 100% !important;
+        height: 200px !important;
+    }
+}
+</style>
+
+<div class="container mt-3">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<div class="formbody">
+<form method="POST" action="{% url 'contact' %}">
+    <h2>Contact Form</h2>
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" name="name" placeholder="Enter name" required>
+    <label for="number">Mobile number:</label>
+    <input type="text" name="number" placeholder="Enter number" required>
+    <label for="email">Email:</label>
+    <input type="email" name="email" placeholder="Enter email" required>
+    <label for="msg">Message:</label>
+    <textarea name="msg" placeholder="Enter message" rows="4"></textarea>
+    <button type="submit">Submit</button>
+</form>
+</div>
+
+<!-- Map Section -->
+<div class="container mt-5">
+  <h4 class="text-center mb-3">Find Us on the Map</h4>
+  <div class="ratio ratio-16x9">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d60537.429646576114!2d73.8262099!3d18.502251!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c100646dfd73%3A0xe30ac461cb922681!2sSwargate%20Metro%20Station%20Hub!5e0!3m2!1sen!2sin!4v1754236517363!5m2!1sen!2sin"
+      width="50%" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+
+
+{% endblock %}

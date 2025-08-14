@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    body {
+        min-height: 100vh;
+        background-color: #f9f5f0;
+    }
+
+    .login-container {
+        margin-top: 80px;
+    }
+
+    .card {
+        border: none;
+        border-radius: 1rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-control:focus {
+        box-shadow: none;
+        border-color: #2193b0;
+    }
+
+    .btn-primary {
+        background-color: #2193b0;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #1b7fa6;
+    }
+
+    .login-title {
+        font-weight: 600;
+        color: #2193b0;
+    }
+    @media (max-width: 768px) {
+  .login-container {
+    margin-top: 50px;
+    padding: 0 15px;
+  }
+
+  .login-container .card {
+    padding: 20px;
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .login-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .form-label {
+    font-size: 14px;
+  }
+
+  .form-control {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .input-group-text {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .text-muted {
+    font-size: 13px;
+  }
+}
+
+</style>
+
+<div class="container login-container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4">
+                <div class="card-body">
+                    <h3 class="text-center login-title mb-4">Student Login</h3>
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <form method="POST" action="{% url 'login' %}">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Enter your username" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+
+                    <p class="text-center text-muted mt-3">New student? Please contact the admin to register.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+        body {
+            /* background-color: #f0f2f5; */
+            background-color: #f9f5f0;
+        }
+        .profile-container {
+            background-color: #fff;
+            padding: 30px;
+            margin-top: 60px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+        }
+        .profile-heading {
+            margin-bottom: 25px;
+            color: #0d6efd;
+            font-weight: bold;
+        }
+        .profile-info p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .btn-back {
+            margin-top: 20px;
+        }
+</style>
+</head>
+<body>
+
+<div class="container d-flex justify-content-center">
+    <div class="profile-container w-100">
+        <h3 class="profile-heading text-center">Student Profile</h3>
+        
+        <div class="profile-info">
+            <p><strong>Name:</strong> {{ student.name }}</p>
+            <p><strong>Email:</strong> {{ student.email }}</p>
+            <p><strong>Phone:</strong> {{ student.phone }}</p>
+            <p><strong>Gender:</strong> {{ student.gender }}</p>
+            <p><strong>Address:</strong> {{ student.address }}</p>
+            <p><strong>Room Number:</strong> {{ student.room_no }}</p>
+            <p><strong>Joined On:</strong> {{ student.join_date }}</p>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <a href="{% url 'student_dashboard' %}" class="btn btn-outline-primary">← Back to Dashboard</a>
+            <a href="{% url 'change_password' %}" class="btn btn-warning">Change Password</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

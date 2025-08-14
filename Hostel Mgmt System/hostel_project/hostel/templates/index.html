@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+html,body {
+    background-color: #f9f5f0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Carousel wrapper adjustment */
+.carousel-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Carousel wrapper adjustment */
+.carousel-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Image styling */
+#hostelCarousel {
+    max-width: 100%;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+#hostelCarousel .carousel-item img {
+    width: 100%;
+    height: 530px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.card-img-top {
+    border-radius: 10px;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.card-img-top:hover {
+    transform: scale(1.05);
+}
+.feature-icon {
+    font-size: 2rem;
+    color: #0d6efd;
+    margin-bottom: 10px;
+}
+</style>
+<div class="bodycontent">
+<!-- Hero Section -->
+<div id="hostelCarousel" class="carousel slide shadow-sm rounded" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/static/images/room_sample.jpg" class="d-block w-100" alt="Room">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Comfortable Rooms</h5>
+        <p>Peaceful and well-furnished rooms for students.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/images/canteen.jpg" class="d-block w-100" alt="Canteen">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Clean Dining Area</h5>
+        <p>Nutritious meals served in a hygienic environment.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/images/freewifi.jpg" class="d-block w-100" alt="Wifi">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Unlimited Wi-Fi</h5>
+        <p>High-speed internet for learning and entertainment.</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#hostelCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#hostelCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+<!-- <div class="bg-primary text-white text-center py-5 rounded shadow">
+    <h1 class="display-5 fw-bold">Welcome to HostelConnect</h1>
+    <p class="lead">Affordable & Comfortable Stay for Students</p>
+    <a href="{% url 'contact' %}" class="btn btn-light btn-lg mt-3">Contact Now</a>
+</div> -->
+
+<!-- Facilities Section -->
+<div class="mt-5">
+    <h2 class="text-center mb-4">Facilities We Provide</h2>
+    <div class="row text-center">
+    <div class="col-md-3 mb-4">
+        <div class="feature-icon"><i class="fas fa-wifi"></i></div>
+        <h6>High-Speed Wi-Fi</h6>
+        <p class="text-muted small">24/7 seamless connectivity to support online classes and entertainment.</p>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="feature-icon"><i class="fas fa-bed"></i></div>
+        <h6>Comfortable Beds</h6>
+        <p class="text-muted small">Each room includes a single bed, mattress, and personal storage space.</p>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="feature-icon"><i class="fas fa-utensils"></i></div>
+        <h6>Veg & Non-Veg Meals</h6>
+        <p class="text-muted small">Wholesome vegetarian meals daily with non-veg options twice a week.</p>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+        <h6>Inverter Backup</h6>
+        <p class="text-muted small">Uninterrupted electricity backup to support your studies anytime.</p>
+    </div>
+    <!-- Add same descriptions for remaining features -->
+</div>
+
+</div>
+
+<!-- Hostel Gallery -->
+<div class="mt-5">
+    <h2 class="text-center mb-4">Our Hostel in Pictures</h2>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <img src="/static/images/freewifi.jpg" class="card-img-top" alt="wifi">
+                <div class="card-body text-center">Fast Wi-Fi</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <img src="/static/images/canteen.jpg" class="card-img-top" alt="canteen">
+                <div class="card-body text-center">Clean Dining Area</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <img src="/static/images/room_sample.jpg" class="card-img-top" alt="room">
+                <div class="card-body text-center">Well-Maintained Rooms</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Student Testimonials -->
+<div class="bg-light p-5 mt-5 rounded shadow-sm">
+<h2 class="text-center text">What our residents say about their hostel experience.</h2>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <p>"HostelConnect helped me stay focused. Great food, friendly staff, and fast Wi-Fi!"</p>
+                    <h6 class="text-muted">– Ranchod Das</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <p>"I feel at home here. Quiet rooms, great facilities, and a positive environment."</p>
+                    <h6 class="text-muted">– Raju Rastogi</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <p>"The support and facilities here are top-notch. Highly recommended for students."</p>
+                    <h6 class="text-muted">– Farhan Quershi</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="container-fluid bg-primary text-white py-5 mt-5 rounded shadow-sm">
+  <div class="row justify-content-center text-center">
+    <div class="col-lg-8 px-4">
+      <h2 class="fw-bold">Start Your Hostel Life with Us</h2>
+      <p class="lead mt-3">Safe, comfortable, and affordable accommodation for your academic journey.</p>
+      <p>Whether you’re joining college for the first time or shifting hostels — HostelConnect is ready to welcome you!</p>
+      <a href="{% url 'contact' %}" class="btn btn-light btn-lg mt-3 px-4">Contact Now</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+{% endblock %}
